@@ -32,6 +32,12 @@ git add .
 git commit -a -m
 ```
 
+Details of recent commit
+
+```
+vi .git/COMMIT_EDITMSG
+```
+
 ```
 $ git add employees.txt
 
