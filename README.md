@@ -8,8 +8,6 @@ git status
 git status --short
 git status -s
 
-git switch -c newbranch
-
 git checkout branch
 
 git checkout sdfdfsd -> Creates detached HEAD
@@ -171,6 +169,7 @@ git stash pop
 ```
 git merge new_branch
 # > Merge made by the 'recursive' strategy
+# Fast-forward if no changes in master
 ```
 
 ## Git Reset
@@ -186,4 +185,24 @@ git reset --mixed <commitHash>
 
 # Move to trash, deletes working directory and staging are content also.
 git reset --trash <commitHash>
+```
+
+## Git Branches
+
+```
+# Create and switch to newbranch
+git switch -c <newbranch>
+
+# Rename a branch
+git branch -m <oldbranch> <newbranch>
+
+# Rename current branch
+git branch -m <newbranch>
+
+# Delete a branch
+git branch -d <branch>
+
+# Delete force
+git branch -D <branch>
+
 ```
