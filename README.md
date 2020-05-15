@@ -12,23 +12,7 @@ git checkout branch
 
 git checkout sdfdfsd -> Creates detached HEAD
 
-git add remote origin URL
-git add remote upstream URL
-
-git diff --staged
-- Metadata : file version hash and file mode identifier
-- Change Markers
-- Chunk header
-- Chunk changes
-
-git diff --stage --no-renames
-
 git add .
-
-git push origin master
-git push <remote name> <branch name>
-
-git remote
 
 # Delete from git and local
 git rm <filename>
@@ -46,36 +30,7 @@ $ git commit -m "adding employees file"
 [master 9efad90] adding employees file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 employees.txt
-
-$  git diff --staged
-
-diff --git a/employees.txt b/employees.txt
-index e69de29..552ad38 100644
---- a/employees.txt
-+++ b/employees.txt
-@@ -0,0 +1 @@
-+Tamilmozhi | 9884622349
-
-tgunasekar@tgunasekar-inl MINGW64 /d/git/Mastering-Git (master)
-$ git diff --staged
-diff --git a/vendors.txt b/vendors.txt
-new file mode 100644
-index 0000000..e69de29
-
-
-$ git diff --staged
-diff --git a/vendors.txt b/vendors.txt
-new file mode 100644
-index 0000000..552ad38
---- /dev/null
-+++ b/vendors.txt
-@@ -0,0 +1 @@
-+Tamilmozhi | 9884622349
-
 ```
-
-sha1 hash
-EMPTY File hash: e69de29 !? (/dev/null)
 
 ## Git Log
 
@@ -205,4 +160,120 @@ git branch -d <branch>
 # Delete force
 git branch -D <branch>
 
+```
+
+## Git Remote
+
+```
+git remote
+
+# List remote
+git remote -v
+
+# List remote branches
+git ls-remote
+
+git remote add <name> <url>
+
+# information about the remote <name>
+git remote show <name>
+
+```
+
+## Git Diff
+
+```
+# What is changed that is not staged
+git diff
+
+# What is changed that is commited not pushed ?
+git diff --cached
+
+# What is changed that is staged but not commited
+# What will happen on 'git commit'
+git diff --staged
+- Metadata : file version hash and file mode identifier
+- Change Markers
+- Chunk header
+- Chunk changes
+
+git diff --stage --no-renames
+
+# What is changed since the last commit
+# What will happen on 'git commit -a'
+git diff HEAD
+
+git diff <commit>
+git diff --staged <commit>
+
+# Diff between 2 commits
+git diff <commit1> <commit2>
+
+# Diff between tips of branches
+git diff feature master
+
+# Changes in master since feature was branched off
+git diff feature...master
+
+git diff feature master file.txt
+$  git diff --staged
+
+diff --git a/employees.txt b/employees.txt
+index e69de29..552ad38 100644
+--- a/employees.txt
++++ b/employees.txt
+@@ -0,0 +1 @@
++Tamilmozhi | 9884622349
+
+tgunasekar@tgunasekar-inl MINGW64 /d/git/Mastering-Git (master)
+$ git diff --staged
+diff --git a/vendors.txt b/vendors.txt
+new file mode 100644
+index 0000000..e69de29
+
+
+$ git diff --staged
+diff --git a/vendors.txt b/vendors.txt
+new file mode 100644
+index 0000000..552ad38
+--- /dev/null
++++ b/vendors.txt
+@@ -0,0 +1 @@
++Tamilmozhi | 9884622349
+
+# Ignore white space changes using -w
+git diff -w
+
+```
+
+sha1 hash
+New file hash: 000000
+EMPTY File hash: e69de29 !?
+/dev/null if new or deleted
+@@ - chunk headers
+
+## Git Ignore
+
+Git file status
+
+- Tracked
+- Untracked
+- Ignored
+
+```
+# Ignore patterns for repo
+.gitignore
+
+# Ignore patterns for local system only
+.git/info/exclude
+```
+
+## Git push
+
+```
+git push origin master
+git push <remote name> <branch name>
+
+# Push to create pull request
+git push -u origin <branch>
 ```
