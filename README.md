@@ -8,6 +8,10 @@ git status
 git status --short
 git status -s
 
+git branch
+
+git branch --all
+
 git switch -c newbranch
 
 git checkout branch
@@ -186,4 +190,26 @@ git reset --mixed <commitHash>
 
 # Move to trash, deletes working directory and staging are content also.
 git reset --trash <commitHash>
+```
+
+## Plumbing Commands
+
+```
+git hash-object
+
+# Read the content to hash from standard input
+echo 'hello' | git hash-object --stdin
+
+# Store it in git under .git/objects/xx/x...xx
+echo 'hello' | git hash-object --stdin -w
+
+# Print the type of hash file
+git cat-file <file hash> -t
+blob
+
+# Pretty print the hash file
+git cat-file <file hash> -p
+
+# Count number of objects
+git count-objects
 ```
