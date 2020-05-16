@@ -212,4 +212,7 @@ git cat-file <file hash> -p
 
 # Count number of objects
 git count-objects
+
+git show-ref <branchname>
+git show-ref master
 ```
