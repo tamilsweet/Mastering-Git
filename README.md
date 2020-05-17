@@ -43,8 +43,14 @@ git rm --cached <filename>
 # Delete from git and local force
 git rm -f <filename>
 
-
+# Rename file(s)
 git mv <filename> <new-filename>
+
+# Other method
+mv <filename> <new-filename>
+git add <new-filename>
+git add <filename>
+# Git finds that this file is renamed
 ```
 
 ```
