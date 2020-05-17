@@ -36,10 +36,12 @@ git push <remote name> <branch name>
 
 git remote
 
-# Delete from git and local
+# Delete from git and local - just shows warning
 git rm <filename>
 # Do not delete locally
 git rm --cached <filename>
+# Delete from git and local force
+git rm -f <filename>
 
 
 git mv <filename> <new-filename>
