@@ -18,6 +18,9 @@ git checkout branch
 
 git checkout sdfdfsd -> Creates detached HEAD
 
+# Discard changes in the working directory
+git checkout -- <filename>
+
 git add remote origin URL
 git add remote upstream URL
 
@@ -191,8 +194,10 @@ git merge new_branch
 # Reset commit and move back to staging area
 git reset --soft <commitHash>
 
+# Reset branch to commit and updates staging area and working directory
+git reset --hard <commitHash>
 
-# Default reset is --mixed, move changes back to working directory
+# Default reset is --mixed, move changes back to working directory !?
 git reset <commitHash>
 git reset --mixed <commitHash>
 
