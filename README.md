@@ -21,6 +21,9 @@ git checkout sdfdfsd -> Creates detached HEAD
 # Discard changes in the working directory
 git checkout -- <filename>
 
+# Discard changes and checkout recently commited change
+git checkout HEAD <filename>
+
 git add remote origin URL
 git add remote upstream URL
 
@@ -54,6 +57,9 @@ mv <filename> <new-filename>
 git add <new-filename>
 git add <filename>
 # Git finds that this file is renamed
+
+# Show commit details
+git show <commithash>
 ```
 
 ```
@@ -215,6 +221,9 @@ git reset --mixed <commitHash>
 
 # Move to trash, deletes working directory and staging are content also.
 git reset --trash <commitHash>
+
+# Restore particular file from recent commit
+git reset HEAD <filename>
 ```
 
 ## Plumbing Commands
