@@ -172,9 +172,21 @@ vi .git/COMMIT_EDITMSG
 
 ## Git Stash
 
+Move the content of working area to stash and checkout latest commit from repo.
+Starting with => stash@{0}
+
 ```
 git add .
 git stash
+
+# Stash all the files
+git stash --include-untracked
+
+# Restore the recent stash but not clear it
+git stash apply
+
+# Clear stash
+git stash clear
 
 git stash list
 git stash show
