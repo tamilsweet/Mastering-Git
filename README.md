@@ -250,3 +250,14 @@ git count-objects
 git show-ref <branchname>
 git show-ref master
 ```
+
+## New Commands
+
+```
+git filter-branch
+git reflog
+git rerere
+git blame
+git cherry-pick
+git bisect
+```
