@@ -60,6 +60,24 @@ git add <filename>
 
 # Show commit details
 git show <commithash>
+
+# Show commit details of commit pointed by branch tip
+git show <branchname>
+
+# Show commit details of commit pointed by HEAD
+git show HEAD
+
+# Show commit details parent commit of the HEAD
+git show HEAD^
+# 2 commits older or parent of parent of HEAD
+git show HEAD^^
+# Another way
+git show HEAD~2
+# Pick one of the multiple parents
+git show HEAD~2^2
+
+# Show the commit one month ago
+git show HEAD@{"1 month ago"}
 ```
 
 ```
@@ -116,6 +134,9 @@ git log --stat
 
 # Show log with diff
 git log --patch
+
+# Show as graph
+git log --graph --decorate --oneline
 
 # Group logs by user
 git shortlog
