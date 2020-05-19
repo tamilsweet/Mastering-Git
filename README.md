@@ -27,14 +27,6 @@ git checkout HEAD <filename>
 git add remote origin URL
 git add remote upstream URL
 
-git diff --staged
-- Metadata : file version hash and file mode identifier
-- Change Markers
-- Chunk header
-- Chunk changes
-
-git diff --stage --no-renames
-
 git add .
 
 git push origin master
@@ -137,6 +129,11 @@ git log --patch
 
 # Show as graph
 git log --graph --decorate --oneline
+
+# Grep in log history
+git log --grep <search term> --oneline
+
+git log branch1..branch2 --oneline
 
 # Group logs by user
 git shortlog
@@ -281,4 +278,19 @@ git rerere
 git blame
 git cherry-pick
 git bisect
+```
+
+## Git diff
+
+```
+git diff --staged
+- Metadata : file version hash and file mode identifier
+- Change Markers
+- Chunk header
+- Chunk changes
+
+git diff --stage --no-renames
+
+# Diff between HEAD and 2 commits before HEAD
+git diff HEAD HEAD~2
 ```
