@@ -274,17 +274,6 @@ git show-ref <branchname>
 git show-ref master
 ```
 
-## New Commands
-
-```
-git filter-branch
-git reflog
-git rerere
-git blame
-git cherry-pick
-git bisect
-```
-
 ## Git diff
 
 ```
@@ -322,4 +311,21 @@ git reflog refs/heads/master
 ```
 git revert <commit hash>
 git revert HEAD
+```
+
+## Git blame
+
+```
+# Show each line of the file along with the commit in which it was added
+# ^ denote first commit
+git blame <filename>
+```
+
+## New Commands
+
+```
+git filter-branch
+git rerere
+git cherry-pick
+git bisect
 ```
