@@ -316,3 +316,10 @@ git reflog HEAD
 
 git reflog refs/heads/master
 ```
+
+## Git Revert
+
+```
+git revert <commit hash>
+git revert HEAD
+```
