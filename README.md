@@ -133,6 +133,8 @@ git log --graph --decorate --oneline
 # Grep in log history
 git log --grep <search term> --oneline
 
+# Log of commits between 2 branches
+# both .. and ... works
 git log branch1..branch2 --oneline
 
 # Group logs by user
@@ -186,6 +188,9 @@ git commit -a -m
 
 # commit any files that have already been added to the staging area
 git commit -m " "
+
+# Merge the staged changes with earlier commit
+git commit --amend
 ```
 
 Details of recent commit
