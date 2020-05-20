@@ -308,3 +308,11 @@ git rebase --interactive
 git rebase -i
 
 ```
+
+## Git Reflog
+
+```
+git reflog HEAD
+
+git reflog refs/heads/master
+```
