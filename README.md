@@ -299,3 +299,12 @@ git diff --stage --no-renames
 # Diff between HEAD and 2 commits before HEAD
 git diff HEAD HEAD~2
 ```
+
+## Git Rebase
+
+```
+# Interactive rebase, apply only on local commits.
+git rebase --interactive
+git rebase -i
+
+```
