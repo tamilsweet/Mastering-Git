@@ -321,6 +321,21 @@ git revert HEAD
 git blame <filename>
 ```
 
+## Rename Branch
+
+```
+# Switch to branch
+git checkout <old_name>
+# Rename branch locally
+git branch -m <new_name>
+
+# If the branch is already pushed to remote follow next 2 steps
+# Push the <new_name> local branch and reset the upstream branch
+git push origin -u <new_name>
+# Delete the <old_name> remote branch
+git push origin --delete <old_name>
+```
+
 ## New Commands
 
 ```
