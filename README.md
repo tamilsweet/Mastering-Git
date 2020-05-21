@@ -436,3 +436,17 @@ git rerere
 git cherry-pick
 git bisect
 ```
+
+### Add tag and push to remote
+
+```
+git tag 0.0.1
+git push origin 0.0.1
+```
+
+## Add local repo to remote repo
+
+```
+git remote add origin git_url.git
+git push -u origin master
+```
