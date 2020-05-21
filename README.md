@@ -12,8 +12,6 @@ git branch
 
 git branch --all
 
-git switch -c newbranch
-
 git checkout branch
 
 git checkout sdfdfsd -> Creates detached HEAD
@@ -28,11 +26,6 @@ git add remote origin URL
 git add remote upstream URL
 
 git add .
-
-git push origin master
-git push <remote name> <branch name>
-
-git remote
 
 # Delete from git and local - just shows warning
 git rm <filename>
@@ -106,9 +99,6 @@ index 0000000..552ad38
 +Tamilmozhi | 9884622349
 
 ```
-
-sha1 hash
-EMPTY File hash: e69de29 !? (/dev/null)
 
 ## Git Log
 
@@ -227,6 +217,17 @@ git stash pop
 ```
 git merge new_branch
 # > Merge made by the 'recursive' strategy
+# Fast-forward if no changes in master
+```
+
+## Git push
+
+```
+git push origin master
+git push <remote name> <branch name>
+
+# Push to create pull request
+git push -u origin <branch>
 ```
 
 ## Git Reset
@@ -277,6 +278,14 @@ git show-ref master
 ## Git diff
 
 ```
+# What is changed that is not staged
+git diff
+
+# What is changed that is commited not pushed ?
+git diff --cached
+
+# What is changed that is staged but not commited
+# What will happen on 'git commit'
 git diff --staged
 - Metadata : file version hash and file mode identifier
 - Change Markers
@@ -287,6 +296,51 @@ git diff --stage --no-renames
 
 # Diff between HEAD and 2 commits before HEAD
 git diff HEAD HEAD~2
+
+# What is changed since the last commit
+# What will happen on 'git commit -a'
+git diff HEAD
+
+git diff <commit>
+git diff --staged <commit>
+
+# Diff between 2 commits
+git diff <commit1> <commit2>
+
+# Diff between tips of branches
+git diff feature master
+
+# Changes in master since feature was branched off
+git diff feature...master
+
+git diff feature master file.txt
+$  git diff --staged
+
+# Ignore white space changes using -w
+git diff -w
+
+```
+
+sha1 hash
+New file hash: 000000
+EMPTY File hash: e69de29 !?
+/dev/null if new or deleted
+@@ - chunk headers
+
+## Git Ignore
+
+Git file status
+
+- Tracked
+- Untracked
+- Ignored
+
+```
+# Ignore patterns for repo
+.gitignore
+
+# Ignore patterns for local system only
+.git/info/exclude
 ```
 
 ## Git Rebase
@@ -321,9 +375,29 @@ git revert HEAD
 git blame <filename>
 ```
 
+## Git Branches
+
+```
+# Create and switch to newbranch
+git switch -c <newbranch>
+
+# Delete a branch
+git branch -d <branch>
+
+# Delete force
+git branch -D <branch>
+
+```
+
 ## Rename Branch
 
 ```
+# Rename a branch
+git branch -m <oldbranch> <newbranch>
+
+# Rename current branch
+git branch -m <newbranch>
+
 # Switch to branch
 git checkout <old_name>
 # Rename branch locally
@@ -334,6 +408,24 @@ git branch -m <new_name>
 git push origin -u <new_name>
 # Delete the <old_name> remote branch
 git push origin --delete <old_name>
+```
+
+## Git Remote
+
+```
+git remote
+
+# List remote
+git remote -v
+
+# List remote branches
+git ls-remote
+
+git remote add <name> <url>
+
+# information about the remote <name>
+git remote show <name>
+
 ```
 
 ## New Commands
