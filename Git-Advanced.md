@@ -74,3 +74,61 @@ git config --system user.name "Tamilmozhi Gunasekar"
 - Merge tool
 - Terminal color output
 - Command aliases
+
+** Environment Variables can also be used to set git configurations **
+
+### View Config Values
+
+```
+# Show all config values and the file where they are defined
+git config --list --show-origin
+
+# Show the current user.name config value (sub any key)
+git config user.name
+```
+
+### Removing Git Config Values
+
+```
+# Remove a specific setting for a specific level of config
+git config --global --unset user.name
+
+# Edit a specific level of config directly
+git config --global --edit
+
+# Remove a section of config for specific level
+git config --global --remove-section user
+```
+
+### Editor setting
+
+```
+git config --global core.editor "code --new-window --wait"
+
+# Use following config for using vscode as diff tool
+
+[diff]
+  tool = vscode-diff
+[difftool]
+  prompt = false
+[difftool "vscode-diff"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+# Use following config for using vscode as merge tool
+[merge]
+  tool = vscode-merge
+[mergetool]
+  keepBackup = false
+[mergetool "vscode-merge"]
+  cmd = code --wait $MERGED
+```
+
+### Git Attributes
+
+Configuration settings that dictate how files are handled.
+
+- Configuring line ending in files
+- Specifying binary files
+- Enabling large binary files to be handled by Git LFS
+- Excluding files from exported version of a repository
+- Specify clean and smudge filters
