@@ -132,3 +132,20 @@ Configuration settings that dictate how files are handled.
 - Enabling large binary files to be handled by Git LFS
 - Excluding files from exported version of a repository
 - Specify clean and smudge filters
+
+### Exclude files from export
+
+```
+# .gitattributes
+.*      export-ignore
+tests   export-ignore
+```
+
+### Clean and Smudge Filter
+
+```
+git config --local filter.updateAPIKey.smudge 'sed "s/{SECRET_API_KEY}/asdfdsfsdfasdfasdf/"'
+git config --local filter.updateAPIKey.clean 'sed "s/asdfdsfsdfasdfasdf/{SECRET_API_KEY}/"'
+
+echo ".js   filter=updateAPIKey" >> .gitattibutes
+```
