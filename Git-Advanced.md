@@ -149,3 +149,12 @@ git config --local filter.updateAPIKey.clean 'sed "s/asdfdsfsdfasdfasdf/{SECRET_
 
 echo ".js   filter=updateAPIKey" >> .gitattibutes
 ```
+
+## Submodules
+
+Options to utilize code from other repositories
+
+- Package Manager, eg. NPM
+- Git Subtrees
+- Git Submodules
+
