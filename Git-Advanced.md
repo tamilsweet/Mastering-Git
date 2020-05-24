@@ -164,8 +164,24 @@ Scripts that executes on specific Git events
 - commit-msg
 - post-commit
 
+_Use Cases_
+
+- Linting files
+- Running tests
+- Verifying no TODO's in commited code
+- Preparing a commit message
+- Cleaning up files after specific actions
+
 ### Server-side Git Hooks
 
 - pre-receive
 - update
 - post-receive
+
+_Use Cases_
+
+- Enforcing commit message format
+- Enforcing user identity information
+- Enforcing signing of tags and/or commits
+- Block access for specific IP addresses
+- Blocking specific file extensions
