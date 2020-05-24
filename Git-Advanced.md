@@ -185,3 +185,19 @@ _Use Cases_
 - Enforcing signing of tags and/or commits
 - Block access for specific IP addresses
 - Blocking specific file extensions
+
+### Client-side hook config
+
+Config for local git repo `.git/hooks/pre-commit.sample`
+To store config inside repo use `.githooks/pre-commit`
+Make sure that the file is executable using `chmod +x .githooks/pre-commit`
+
+`set -e` to run scripts and use non-zero return values as errors
+
+## Custom Git Commands
+
+Any script can be added as custom git command involed using `git <customcommand>`
+Make sure the script starts with `git-` eg. `git-customcommand`
+Make sure script is executable `chmod +x git-customcommand`
+Add the script to PATH `export PATH="script_path:$PATH"`
+Run the custom command using `git customcommand`
