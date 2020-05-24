@@ -149,3 +149,23 @@ git config --local filter.updateAPIKey.clean 'sed "s/asdfdsfsdfasdfasdf/{SECRET_
 
 echo ".js   filter=updateAPIKey" >> .gitattibutes
 ```
+
+## Git Hooks
+
+Scripts that executes on specific Git events
+
+- Client-side hooks
+- Server-side hooks
+
+### Client-sde Git Hooks
+
+- pre-commit
+- prepare-commit-msg
+- commit-msg
+- post-commit
+
+### Server-side Git Hooks
+
+- pre-receive
+- update
+- post-receive
