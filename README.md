@@ -428,15 +428,6 @@ git remote show <name>
 
 ```
 
-## New Commands
-
-```
-git filter-branch
-git rerere
-git cherry-pick
-git bisect
-```
-
 ### Add tag and push to remote
 
 ```
@@ -449,4 +440,33 @@ git push origin 0.0.1
 ```
 git remote add origin git_url.git
 git push -u origin master
+```
+
+## Git bisect
+
+```
+# Start the bisect process
+git bisect start
+
+# Specify good and bad commits
+git bisect good cd98e30
+git bisect bad bc34c52
+
+# Mark the current commit good or bad
+git bisect good
+git bisect bad
+
+# Automatically evaluate commits
+git bisect run npm test
+
+# End git bisect
+git bisect reset
+```
+
+## New Commands
+
+```
+git filter-branch
+git rerere
+git cherry-pick
 ```
