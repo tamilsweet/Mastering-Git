@@ -21,6 +21,21 @@ git clone /var/repos/sample_project.git
 git clone file:///var/repos/sample_project.git
 ```
 
+### Steps to test Git local protocol
+
+```
+mkdir -p server/repo.git
+cd server/repo.git/
+git --bare init
+cd
+git clone ~/server/repo.git/
+cd repo
+echo "New Project" >> README.md
+git add .
+git commit -m "Initial Commit"
+git push origin master
+```
+
 ## Git Remote Protocols
 
 - _SSH Protocol_ - Enables remote communication for Git via SSH connection
