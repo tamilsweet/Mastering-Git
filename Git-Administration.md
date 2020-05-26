@@ -180,3 +180,25 @@ git --bare init
 # From client clone now
 git clone git@serverIP:/home/git/repo1.git
 ```
+
+## User Management
+
+- Enable additionial users to access the repository via SSH
+- Configure the Git account to disable shell access
+- Configure the Git account to disable port forwarding
+
+```
+# Client Machine
+./createUser.sh
+./populateUsers.sh
+
+# Server Machine
+which git-shell
+# add it to /etc/shells
+
+# Add git shell as default for git user
+sudo chsh git -s $(which git-shell)
+
+# Add prefix to ssh keys
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa ...
+```
