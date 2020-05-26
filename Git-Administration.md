@@ -202,3 +202,24 @@ sudo chsh git -s $(which git-shell)
 # Add prefix to ssh keys
 no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa ...
 ```
+
+## Administration Steps
+
+- Manage user keys and SSH permissions
+- Manually create bare repository
+- Enforce team policies using server-side Git hooks
+- Enforce repository and branch specific permissions with Git hooks
+
+### Server-side Git Hooks
+
+- Server-side hooks can enforce team policies
+- pre-receive - For rejecting pushes based on overall policies
+- update - For evaluation of individual branch pushes
+- post-receive - For notifications and hooks after the commit
+
+### Signing the git commit
+
+```
+gpg --list-keys
+gpg --full-gen-key
+```
