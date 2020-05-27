@@ -223,3 +223,33 @@ no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa ...
 gpg --list-keys
 gpg --full-gen-key
 ```
+
+## Git Protocol Communication
+
+- Dumb Protocol
+- Smart Protocol
+
+### Git Smart HTTP/S Protocol
+
+- Enables password user authentication through HTTP basic authentication
+- Can work alongside SSH access
+- Requires server-side script to handle the communication with the client
+- Can leverage most any web server
+
+### Webserver Configuration
+
+_Git Host_
+
+- Will have a dedicated virutal host in Apache
+- Utilizes the suEXEC module to run as the git user
+- Utilizes HTTP basic authentication
+- Uses self-signed certificate for HTTPS
+- Requires Gitolite user deamon for repository access
+
+_Gitweb Host_
+
+- Will have a dedicated virutal host in Apache
+- Will run as the normal Apache user, www-data
+- Utilizes HTTP basic authentication
+- Uses self-signed certificate for HTTPS
+- Requires Gitolite user gitweb for repository access
